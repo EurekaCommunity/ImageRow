@@ -1,5 +1,3 @@
-# ImageRow
-
 <p align="left">
 <a href="https://travis-ci.org/EurekaCommunity/ImageRow"><img src="https://travis-ci.org/EurekaCommunity/ImageRow.svg?branch=master" alt="Build status" /></a>
 <img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platform iOS" />
