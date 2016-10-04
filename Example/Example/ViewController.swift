@@ -5,7 +5,6 @@
 //  Copyright © 2016 Xmartlabs SRL. All rights reserved.
 //
 
-import UIKit
 import ImageRow
 import Eureka
 
@@ -40,8 +39,4 @@ class ViewController: FormViewController {
                         $0.clearAction = .yes(style: .default)
                     }
     }
-
-
-
 }
-
