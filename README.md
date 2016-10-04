@@ -102,7 +102,10 @@ github "EurekaCommunity/ImageRow" ~> 1.0
 
 ## Customization
 
+ImageRow has 2 properties to customize:
 
+* `sourceTypes` which allows us to specify the source of the picture. It could be .PhotoLibrary, .Camera, .SavedPhotosAlbum, or any combination of the previous values since `sourceTypes` property type is `ImageRowSourceTypes` which conforms to `OptionSet`.
+* `clearAction` let's us add a clear action sheet option  and configure its style. Possible values are: `.no` or `.yes(style: UIAlertActionStyle)`. Notice that .yes value requires we pass a `UIAlertActionStyle` style. 
 
 ## Author
 
