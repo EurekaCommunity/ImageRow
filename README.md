@@ -56,6 +56,8 @@ class ViewController: FormViewController {
 
 ```
 
+**NSPhotoLibraryUsageDescription** key must be added to info.plist. For more information, take a look at apple [documentation](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html). 
+
 ## Requirements
 
 * iOS 8.0+
