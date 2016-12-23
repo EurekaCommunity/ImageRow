@@ -187,6 +187,21 @@ extension _ImageRow {
     
 //MARK: Helpers
     
+    func createImagePreview(_ alertController: UIAlertController) {
+        guard let imageValue = self.value else { return }
+        
+        let rect = CGRect(x: 0, y: 10, width: alertController.view.bounds.size.width - 4 - 16, height: 218.0)
+        let customView = UIImageView(frame: rect)
+        customView.image = imageValue as UIImage
+        customView.contentMode = .scaleAspectFit
+        customView.backgroundColor = UIColor.white
+        alertController.view.addSubview(customView)
+        alertController.addAction(UIAlertAction(title: "", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "", style: .default, handler: nil))
+    }
+    
     func createOptionForAlertController(_ alertController: UIAlertController, sourceType: ImageRowSourceTypes) {
         guard let pickerSourceType = UIImagePickerControllerSourceType(rawValue: sourceType.imagePickerControllerSourceTypeRawValue), sourceTypes.contains(sourceType) else { return }
         let option = UIAlertAction(title: NSLocalizedString(sourceType.localizedString, comment: ""), style: .default, handler: { [weak self] _ in
@@ -196,6 +211,7 @@ extension _ImageRow {
     }
     
     func createOptionsForAlertController(_ alertController: UIAlertController) {
+        createImagePreview(alertController)
         createOptionForAlertController(alertController, sourceType: .Camera)
         createOptionForAlertController(alertController, sourceType: .PhotoLibrary)
         createOptionForAlertController(alertController, sourceType: .SavedPhotosAlbum)
