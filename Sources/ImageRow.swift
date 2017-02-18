@@ -49,7 +49,7 @@ extension ImageRowSourceTypes {
         case ImageRowSourceTypes.Camera:
             return "Take photo"
         case ImageRowSourceTypes.PhotoLibrary:
-            return "Photo Library"
+            return "Fotobibliothek"
         case ImageRowSourceTypes.SavedPhotosAlbum:
             return "Saved Photos"
         default:
