@@ -109,6 +109,8 @@ ImageRow has 2 properties to customize:
 * `sourceTypes` which allows us to specify the source of the picture. It could be .PhotoLibrary, .Camera, .SavedPhotosAlbum, or any combination of the previous values since `sourceTypes` property type is `ImageRowSourceTypes` which conforms to `OptionSet`.
 * `clearAction` let's us add a clear action sheet option  and configure its style. Possible values are: `.no` or `.yes(style: UIAlertActionStyle)`. Notice that .yes value requires we pass a `UIAlertActionStyle` style. 
 
+To localize the Actionsheet strings just add the keys `"Take photo", "Photo Library", "Saved Photos", "Cancel", "Clear Photo"` to your Localizable.strings file
+
 ## Author
 
 * [Xmartlabs SRL](https://github.com/xmartlabs) ([@xmartlabs](https://twitter.com/xmartlabs))
