@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ImageRow"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "Eureka row that allows us to take or select a picture."
   s.homepage         = "https://github.com/EurekaCommunity/ImageRow"
   s.license          = { type: 'MIT', file: 'LICENSE' }
@@ -10,9 +10,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.requires_arc = true
   s.ios.source_files = 'Sources/**/*.{swift}'
-  # s.resource_bundles = {
-  #   'ImageRow' => ['ImageRow/Sources/**/*.xib']
-  # }
-  # s.ios.frameworks = 'UIKit', 'Foundation'
-  s.dependency 'Eureka', '~> 2.0.0-beta.1'
+  s.dependency 'Eureka', '~> 2.0.1'
 end
