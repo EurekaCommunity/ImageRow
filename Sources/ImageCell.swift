@@ -1,4 +1,4 @@
-//  ImagePickerController.swift
+//  ImageCell.swift
 //  ImageRow ( https://github.com/EurekaCommunity/ImageRow )
 //
 //  Copyright (c) 2016 Xmartlabs SRL ( http://xmartlabs.com )
@@ -23,30 +23,24 @@
 // THE SOFTWARE.
 
 import Eureka
-import Foundation
 
-/// Selector Controller used to pick an image
-open class ImagePickerController : UIImagePickerController, TypedRowControllerType, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+public final class ImageCell: Cell<UIImage>, CellType {
     
-    /// The row that pushed or presented this controller
-    public var row: RowOf<UIImage>!
-    
-    /// A closure to be called when the controller disappears.
-    public var onDismissCallback : ((UIViewController) -> ())?
-    
-    open override func viewDidLoad() {
-        super.viewDidLoad()
-        delegate = self
+    public override func setup() {
+        super.setup()
+        
+        accessoryType = .none
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        accessoryView = imageView
     }
     
-    open func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        (row as? ImageRow)?.imageURL = info[UIImagePickerControllerReferenceURL] as? URL
-        row.value = info[UIImagePickerControllerOriginalImage] as? UIImage
-        onDismissCallback?(self)
+    public override func update() {
+        super.update()
+        
+        selectionStyle = row.isDisabled ? .none : .default
+        (accessoryView as? UIImageView)?.image = row.value
     }
-    
-    open func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
-        onDismissCallback?(self)
-    }
-    
+
 }

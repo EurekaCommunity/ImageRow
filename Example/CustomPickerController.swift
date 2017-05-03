@@ -1,4 +1,4 @@
-//  ImagePickerController.swift
+//  CustomPickerController.swift
 //  ImageRow ( https://github.com/EurekaCommunity/ImageRow )
 //
 //  Copyright (c) 2016 Xmartlabs SRL ( http://xmartlabs.com )
@@ -23,24 +23,26 @@
 // THE SOFTWARE.
 
 import Eureka
-import Foundation
+import UIKit
 
-/// Selector Controller used to pick an image
-open class ImagePickerController : UIImagePickerController, TypedRowControllerType, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+open class CustomPickerController: UIImagePickerController, TypedRowControllerType, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     /// The row that pushed or presented this controller
     public var row: RowOf<UIImage>!
     
-    /// A closure to be called when the controller disappears.
+    /// A closure to be called when the controller disappears
     public var onDismissCallback : ((UIViewController) -> ())?
     
     open override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
+        
+        // Allow edition
+        allowsEditing = true
     }
     
     open func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        (row as? ImageRow)?.imageURL = info[UIImagePickerControllerReferenceURL] as? URL
+        (row as? MyImageRow)?.imageURL = info[UIImagePickerControllerReferenceURL] as? URL
         row.value = info[UIImagePickerControllerOriginalImage] as? UIImage
         onDismissCallback?(self)
     }
