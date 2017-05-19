@@ -15,6 +15,7 @@
 		28BDF5FF1DA42427000518EB /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BDF5FD1DA42427000518EB /* Eureka.framework */; };
 		28F828811C494B2C00330CF4 /* ImageRow.h in Headers */ = {isa = PBXBuildFile; fileRef = 28F828801C494B2C00330CF4 /* ImageRow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28F828881C494B2C00330CF4 /* ImageRow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F8287D1C494B2C00330CF4 /* ImageRow.framework */; };
+		9A61F6D71EBA133800CBE062 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A61F6D61EBA133800CBE062 /* ImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		28F828871C494B2C00330CF4 /* ImageRowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageRowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F8288E1C494B2C00330CF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 		28F8289B1C494BF100330CF4 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Playground.playground; path = Example/Playground.playground; sourceTree = "<group>"; };
+		9A61F6D61EBA133800CBE062 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				28BDF5F41DA40763000518EB /* ImagePickerController.swift */,
 				28BDF5F81DA4078C000518EB /* ImageRow.swift */,
+				9A61F6D61EBA133800CBE062 /* ImageCell.swift */,
 				28BDF5F61DA4076A000518EB /* Info.plist */,
 				28F828801C494B2C00330CF4 /* ImageRow.h */,
 			);
@@ -222,6 +225,7 @@
 			files = (
 				28BDF5F91DA4078C000518EB /* ImageRow.swift in Sources */,
 				28BDF5F51DA40763000518EB /* ImagePickerController.swift in Sources */,
+				9A61F6D71EBA133800CBE062 /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

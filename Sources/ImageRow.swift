@@ -65,11 +65,11 @@ public enum ImageClearAction {
 
 //MARK: Row
 
-open class _ImageRow<Cell: CellType>: SelectorRow<Cell, ImagePickerController> where Cell: BaseCell, Cell: TypedCellType, Cell.Value == UIImage {
+open class _ImageRow<VCType: TypedRowControllerType, Cell: CellType>: SelectorRow<Cell, VCType> where VCType: UIImagePickerController, VCType.RowValue == UIImage, Cell: BaseCell, Cell: TypedCellType, Cell.Value == UIImage {
     
 
     open var sourceTypes: ImageRowSourceTypes
-    open internal(set) var imageURL: URL?
+    open var imageURL: URL?
     open var clearAction = ImageClearAction.yes(style: .destructive)
     
     private var _sourceType: UIImagePickerControllerSourceType = .camera
@@ -77,7 +77,7 @@ open class _ImageRow<Cell: CellType>: SelectorRow<Cell, ImagePickerController> w
     public required init(tag: String?) {
         sourceTypes = .All
         super.init(tag: tag)
-        presentationMode = .presentModally(controllerProvider: ControllerProvider.callback { return ImagePickerController() }, onDismiss: { [weak self] vc in
+        presentationMode = .presentModally(controllerProvider: ControllerProvider.callback { return VCType() }, onDismiss: { [weak self] vc in
             self?.select()
             vc.dismiss(animated: true)
             })
@@ -164,22 +164,6 @@ open class _ImageRow<Cell: CellType>: SelectorRow<Cell, ImagePickerController> w
         }
         rowVC.sourceType = _sourceType
     }
-    
-    open override func customUpdateCell() {
-        super.customUpdateCell()
-        cell.accessoryType = .none
-        if let image = self.value {
-            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
-            imageView.contentMode = .scaleAspectFill
-            imageView.image = image
-            imageView.clipsToBounds = true
-            cell.accessoryView = imageView
-        }
-        else{
-            cell.accessoryView = nil
-        }
-    }
-    
 
 }
 
@@ -200,12 +184,14 @@ extension _ImageRow {
         createOptionForAlertController(alertController, sourceType: .PhotoLibrary)
         createOptionForAlertController(alertController, sourceType: .SavedPhotosAlbum)
     }
+    
 }
 
 /// A selector row where the user can pick an image
-public final class ImageRow : _ImageRow<PushSelectorCell<UIImage>>, RowType {
+public final class ImageRow : _ImageRow<ImagePickerController, ImageCell>, RowType {
+    
     public required init(tag: String?) {
         super.init(tag: tag)
     }
+    
 }
-

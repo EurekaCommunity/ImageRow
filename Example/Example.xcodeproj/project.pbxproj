@@ -15,6 +15,8 @@
 		28F828D51C4B714D00330CF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F828D31C4B714D00330CF4 /* Main.storyboard */; };
 		28F828D71C4B714D00330CF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F828D61C4B714D00330CF4 /* Assets.xcassets */; };
 		28F828DA1C4B714D00330CF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F828D81C4B714D00330CF4 /* LaunchScreen.storyboard */; };
+		9A61F6D11EB9211100CBE062 /* CustomRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A61F6D01EB9211100CBE062 /* CustomRow.xib */; };
+		9A61F6D51EB9227500CBE062 /* CustomPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A61F6D41EB9227500CBE062 /* CustomPickerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		28F828DB1C4B714D00330CF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Example/Info.plist; sourceTree = "<group>"; };
 		28F828E01C4B714D00330CF4 /* ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F828E61C4B714D00330CF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A61F6D01EB9211100CBE062 /* CustomRow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomRow.xib; sourceTree = "<group>"; };
+		9A61F6D41EB9227500CBE062 /* CustomPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 				28F828D61C4B714D00330CF4 /* Assets.xcassets */,
 				28F828D81C4B714D00330CF4 /* LaunchScreen.storyboard */,
 				28F828DB1C4B714D00330CF4 /* Info.plist */,
+				9A61F6D01EB9211100CBE062 /* CustomRow.xib */,
+				9A61F6D41EB9227500CBE062 /* CustomPickerController.swift */,
 			);
 			name = Example;
 			sourceTree = "<group>";
@@ -256,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28F828DA1C4B714D00330CF4 /* LaunchScreen.storyboard in Resources */,
+				9A61F6D11EB9211100CBE062 /* CustomRow.xib in Resources */,
 				28F828D71C4B714D00330CF4 /* Assets.xcassets in Resources */,
 				28F828D51C4B714D00330CF4 /* Main.storyboard in Resources */,
 			);
@@ -292,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A61F6D51EB9227500CBE062 /* CustomPickerController.swift in Sources */,
 				28F828D21C4B714D00330CF4 /* ViewController.swift in Sources */,
 				28F828D01C4B714D00330CF4 /* AppDelegate.swift in Sources */,
 			);
