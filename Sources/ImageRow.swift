@@ -63,14 +63,19 @@ public enum ImageClearAction {
     case yes(style: UIAlertActionStyle)
 }
 
+protocol ImageRowProtocol {
+    var placeholderImage: UIImage? { get }
+}
+
 //MARK: Row
 
-open class _ImageRow<VCType: TypedRowControllerType, Cell: CellType>: SelectorRow<Cell, VCType> where VCType: UIImagePickerController, VCType.RowValue == UIImage, Cell: BaseCell, Cell: TypedCellType, Cell.Value == UIImage {
+open class _ImageRow<VCType: TypedRowControllerType, Cell: CellType>: SelectorRow<Cell, VCType>, ImageRowProtocol where VCType: UIImagePickerController, VCType.RowValue == UIImage, Cell: BaseCell, Cell: TypedCellType, Cell.Value == UIImage {
     
 
     open var sourceTypes: ImageRowSourceTypes
     open var imageURL: URL?
     open var clearAction = ImageClearAction.yes(style: .destructive)
+    public var placeholderImage: UIImage?
     
     private var _sourceType: UIImagePickerControllerSourceType = .camera
     

@@ -42,8 +42,8 @@ public final class ImageCell: Cell<UIImage>, CellType {
         super.update()
         
         selectionStyle = row.isDisabled ? .none : .default
-        (accessoryView as? UIImageView)?.image = row.value
-        (editingAccessoryView as? UIImageView)?.image = row.value
+        (accessoryView as? UIImageView)?.image = row.value ?? (row as? ImageRowProtocol)?.placeholderImage
+        (editingAccessoryView as? UIImageView)?.image = row.value ?? (row as? ImageRowProtocol)?.placeholderImage
     }
 
 }
