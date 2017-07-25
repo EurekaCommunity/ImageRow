@@ -89,7 +89,7 @@ You can also experiment and learn with the *ImageRow Playground* which is contai
 To install ImageRow, simply add the following line to your Podfile:
 
 ```ruby
-pod 'ImageRow', '~> 1.0'
+pod 'ImageRow', '~> 2.0'
 ```
 
 #### Carthage
@@ -99,7 +99,7 @@ pod 'ImageRow', '~> 1.0'
 To install ImageRow, simply add the following line to your Cartfile:
 
 ```ogdl
-github "EurekaCommunity/ImageRow" ~> 1.0
+github "EurekaCommunity/ImageRow" ~> 2.0
 ```
 
 ## Customization
