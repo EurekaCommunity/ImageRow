@@ -24,16 +24,17 @@
 
 import Eureka
 
-public final class ImageCell: Cell<UIImage>, CellType {
-    
+public final class ImageCell: PushSelectorCell<UIImage> {
     public override func setup() {
         super.setup()
         
         accessoryType = .none
         editingAccessoryView = .none
+
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+
         accessoryView = imageView
         editingAccessoryView = imageView
     }
@@ -45,5 +46,4 @@ public final class ImageCell: Cell<UIImage>, CellType {
         (accessoryView as? UIImageView)?.image = row.value ?? (row as? ImageRowProtocol)?.placeholderImage
         (editingAccessoryView as? UIImageView)?.image = row.value ?? (row as? ImageRowProtocol)?.placeholderImage
     }
-
 }

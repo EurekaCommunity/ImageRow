@@ -9,11 +9,9 @@ import ImageRow
 import Eureka
 
 class ViewController: FormViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         form +++ Section()
                 <<< ImageRow() { row in
                     row.title = "Image Row 1"
@@ -42,17 +40,17 @@ class ViewController: FormViewController {
 }
 
 /// CustomPickerController: a selector row where the user can pick an image and edit it then of the selection
-public final class MyImageRow : _ImageRow<CustomPickerController, MyImageCell>, RowType {
-    public required init(tag: String?) {
-        super.init(tag: tag)
-        
-        // Set a nib file to the cell privider
-        cellProvider = CellProvider(nibName: "CustomRow")
-    }
+public final class MyImageRow: _ImageRow<PushSelectorCell<UIImage>>, RowType {
+  public required init(tag: String?) {
+    super.init(tag: tag)
+
+    // Set a nib file to the cell privider
+    cellProvider = CellProvider<PushSelectorCell<UIImage>>(nibName: "CustomRow", bundle: Bundle.main)
+  }
 }
 
 /// Definition of a custom cell
-public final class MyImageCell: Cell<UIImage>, CellType {
+public final class MyImageCell: PushSelectorCell<UIImage> {
     
     /// xib outlets
     @IBOutlet weak public var myImageView: UIImageView!
@@ -81,9 +79,10 @@ public final class MyImageCell: Cell<UIImage>, CellType {
         if let image = row.value {
             myImageView.image = image
         }
+
         myLabel.text = row.title
         textLabel?.text = nil
         detailTextLabel?.text = nil
     }
-    
+
 }
