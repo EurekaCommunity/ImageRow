@@ -26,13 +26,13 @@ import Eureka
 import Foundation
 
 /// Selector Controller used to pick an image
-open class ImagePickerController : UIImagePickerController, TypedRowControllerType, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+open class ImagePickerController: UIImagePickerController, TypedRowControllerType, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     /// The row that pushed or presented this controller
     public var row: RowOf<UIImage>!
     
     /// A closure to be called when the controller disappears.
-    public var onDismissCallback : ((UIViewController) -> ())?
+    public var onDismissCallback: ((UIViewController) -> ())?
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,5 +48,4 @@ open class ImagePickerController : UIImagePickerController, TypedRowControllerTy
     open func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
         onDismissCallback?(self)
     }
-    
 }
