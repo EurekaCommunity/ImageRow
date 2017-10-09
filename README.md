@@ -1,9 +1,9 @@
 <p align="left">
 <a href="https://travis-ci.org/EurekaCommunity/ImageRow"><img src="https://travis-ci.org/EurekaCommunity/ImageRow.svg?branch=master" alt="Build status" /></a>
 <img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platform iOS" />
-<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift3-compatible-4BC51D.svg?style=flat" alt="Swift 3 compatible" /></a>
+<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift4-compatible-4BC51D.svg?style=flat" alt="Swift 4 compatible" /></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible" /></a>
-<a href="https://cocoapods.org/pods/XLActionController"><img src="https://img.shields.io/cocoapods/v/ImageRow.svg" alt="CocoaPods compatible" /></a>
+<a href="https://cocoapods.org/pods/ImageRow"><img src="https://img.shields.io/cocoapods/v/ImageRow.svg" alt="CocoaPods compatible" /></a>
 <a href="https://raw.githubusercontent.com/EurekaCommunity/ImageRow/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
 </p>
 
@@ -56,13 +56,13 @@ class ViewController: FormViewController {
 
 ```
 
-**NSPhotoLibraryUsageDescription** key must be added to info.plist. For more information, take a look at apple [documentation](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html). 
+**NSPhotoLibraryUsageDescription** key must be added to info.plist. For more information, take a look at apple [documentation](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html).
 
 ## Requirements
 
-* iOS 8.0+
-* Xcode 8.0+
-* Eureka 2.0.*
+* iOS 9.0+
+* Xcode 9.0+
+* Eureka ~> 4.0
 
 ## Getting involved
 
@@ -89,7 +89,7 @@ You can also experiment and learn with the *ImageRow Playground* which is contai
 To install ImageRow, simply add the following line to your Podfile:
 
 ```ruby
-pod 'ImageRow', '~> 2.0'
+pod 'ImageRow', '~> 3.0'
 ```
 
 #### Carthage
@@ -99,7 +99,7 @@ pod 'ImageRow', '~> 2.0'
 To install ImageRow, simply add the following line to your Cartfile:
 
 ```ogdl
-github "EurekaCommunity/ImageRow" ~> 2.0
+github "EurekaCommunity/ImageRow" ~> 3.0
 ```
 
 ## Customization
@@ -107,7 +107,7 @@ github "EurekaCommunity/ImageRow" ~> 2.0
 ImageRow has 2 properties to customize:
 
 * `sourceTypes` which allows us to specify the source of the picture. It could be .PhotoLibrary, .Camera, .SavedPhotosAlbum, or any combination of the previous values since `sourceTypes` property type is `ImageRowSourceTypes` which conforms to `OptionSet`.
-* `clearAction` let's us add a clear action sheet option  and configure its style. Possible values are: `.no` or `.yes(style: UIAlertActionStyle)`. Notice that .yes value requires we pass a `UIAlertActionStyle` style. 
+* `clearAction` let's us add a clear action sheet option  and configure its style. Possible values are: `.no` or `.yes(style: UIAlertActionStyle)`. Notice that .yes value requires we pass a `UIAlertActionStyle` style.
 
 To localize the Actionsheet strings just add the keys `"Take photo", "Photo Library", "Saved Photos", "Cancel", "Clear Photo"` to your Localizable.strings file
 

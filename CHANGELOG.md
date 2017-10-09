@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to ImageRow will be documented in this file.
 
+### [3.0.0](https://github.com/EurekaCommunity/ImageRow/releases/tag/3.0.0)
+<!-- Released on 2017-10-09. -->
+
+* Eureka 4.0.0 support.
+
 ### [1.0.1](https://github.com/EurekaCommunity/ImageRow/releases/tag/1.0.1)
 <!-- Released on 2017-03-09. -->
 
