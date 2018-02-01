@@ -36,14 +36,15 @@ open class ImagePickerController: UIImagePickerController, TypedRowControllerTyp
     
     open override func viewDidLoad() {
         super.viewDidLoad()
+        allowsEditing = (row as? ImageRow)?.allowEditor ?? false
         delegate = self
     }
     
     open func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         (row as? ImageRow)?.imageURL = info[UIImagePickerControllerReferenceURL] as? URL
         
-        row.value = info[UIImagePickerControllerOriginalImage] as? UIImage
-        row.userPickerInfo = info
+        row.value = info[ (row as? ImageRow)?.useEditedImage ?? false ? UIImagePickerControllerEditedImage : UIImagePickerControllerOriginalImage] as? UIImage
+        (row as? ImageRow)?.userPickerInfo = info
         onDismissCallback?(self)
     }
     
