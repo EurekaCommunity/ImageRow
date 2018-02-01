@@ -29,6 +29,8 @@ public struct ImageRowSourceTypes: OptionSet {
     public let rawValue: Int
     public var imagePickerControllerSourceTypeRawValue: Int { return self.rawValue >> 1 }
 
+    public var userPickerInfo : [String:Any]?
+    
     public init(rawValue: Int) { self.rawValue = rawValue }
     init(_ sourceType: UIImagePickerControllerSourceType) { self.init(rawValue: 1 << sourceType.rawValue) }
 
