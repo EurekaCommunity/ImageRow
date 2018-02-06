@@ -104,10 +104,13 @@ github "EurekaCommunity/ImageRow" ~> 3.0
 
 ## Customization
 
-ImageRow has 2 properties to customize:
+ImageRow has 5 properties to customize:
 
 * `sourceTypes` which allows us to specify the source of the picture. It could be .PhotoLibrary, .Camera, .SavedPhotosAlbum, or any combination of the previous values since `sourceTypes` property type is `ImageRowSourceTypes` which conforms to `OptionSet`.
 * `clearAction` let's us add a clear action sheet option  and configure its style. Possible values are: `.no` or `.yes(style: UIAlertActionStyle)`. Notice that .yes value requires we pass a `UIAlertActionStyle` style.
+* `allowEditor` tells the `ImagePickerController` to use the standard system image editor after a Image is selected. Possible values are: `true` or `false`. The default value for this property is `false`.
+* `useEditedImage` tells the `ImageRow` to use the edited Image from the editor instead of the original one. Possible values are: `true` or `false`. The default value for this property is `false`.
+* `userPickerInfo` this property holds the `info` properties of the `ImagePickerController` after a edited Image is selected, this can be used to further customization or information usage of the selected image. By default this property is `nil`.
 
 To localize the Actionsheet strings just add the keys `"Take photo", "Photo Library", "Saved Photos", "Cancel", "Clear Photo"` to your Localizable.strings file
 
