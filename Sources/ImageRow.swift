@@ -77,11 +77,19 @@ open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType, ImageR
   open var imageURL: URL?
   open var clearAction = ImageClearAction.yes(style: .destructive)
   open var placeholderImage: UIImage?
+    
+  open var userPickerInfo : [String:Any]?
+  open var allowEditor : Bool
+  open var useEditedImage : Bool
 
   private var _sourceType: UIImagePickerControllerSourceType = .camera
 
   public required init(tag: String?) {
     sourceTypes = .All
+    userPickerInfo = nil
+    allowEditor = false
+    useEditedImage = false
+    
     super.init(tag: tag)
 
     presentationMode = .presentModally(controllerProvider: ControllerProvider.callback { return ImagePickerController() }, onDismiss: { [weak self] vc in
