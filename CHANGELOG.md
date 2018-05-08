@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to ImageRow will be documented in this file.
 
+### [3.1.0](https://github.com/EurekaCommunity/ImageRow/releases/tag/3.1.0)
+<!-- Released on 2018-05-08. -->
+
+* Add Option to crop image and use edited image (#36)
+
 ### [3.0.0](https://github.com/EurekaCommunity/ImageRow/releases/tag/3.0.0)
 <!-- Released on 2017-10-09. -->
 
