@@ -40,13 +40,15 @@ open class ImagePickerController: UIImagePickerController, TypedRowControllerTyp
         delegate = self
     }
     
-    open func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        (row as? ImageRow)?.imageURL = info[UIImagePickerControllerReferenceURL] as? URL
+    open func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        (row as? ImageRow)?.imageURL = info[UIImagePickerController.InfoKey.referenceURL] as? URL
         
-        row.value = info[ (row as? ImageRow)?.useEditedImage ?? false ? UIImagePickerControllerEditedImage : UIImagePickerControllerOriginalImage] as? UIImage
+        row.value = info[ (row as? ImageRow)?.useEditedImage ?? false ? UIImagePickerController.InfoKey.editedImage : UIImagePickerController.InfoKey.originalImage] as? UIImage
         (row as? ImageRow)?.userPickerInfo = info
         onDismissCallback?(self)
     }
+    
+    
     
     open func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
         onDismissCallback?(self)

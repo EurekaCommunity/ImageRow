@@ -30,7 +30,7 @@ public struct ImageRowSourceTypes: OptionSet {
     public var imagePickerControllerSourceTypeRawValue: Int { return self.rawValue >> 1 }
 
     public init(rawValue: Int) { self.rawValue = rawValue }
-    init(_ sourceType: UIImagePickerControllerSourceType) { self.init(rawValue: 1 << sourceType.rawValue) }
+    init(_ sourceType: UIImagePickerController.SourceType) { self.init(rawValue: 1 << sourceType.rawValue) }
 
     public static let PhotoLibrary = ImageRowSourceTypes(.photoLibrary)
     public static let Camera = ImageRowSourceTypes(.camera)
@@ -55,7 +55,7 @@ public extension ImageRowSourceTypes {
 
 public enum ImageClearAction {
     case no
-    case yes(style: UIAlertActionStyle)
+    case yes(style: UIAlertAction.Style)
 }
 
 protocol ImageRowProtocol {
@@ -78,11 +78,11 @@ open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType, ImageR
   open var clearAction = ImageClearAction.yes(style: .destructive)
   open var placeholderImage: UIImage?
     
-  open var userPickerInfo : [String:Any]?
+  open var userPickerInfo : [UIImagePickerController.InfoKey:Any]?
   open var allowEditor : Bool
   open var useEditedImage : Bool
 
-  private var _sourceType: UIImagePickerControllerSourceType = .camera
+  private var _sourceType: UIImagePickerController.SourceType = .camera
 
   public required init(tag: String?) {
     sourceTypes = .All
@@ -101,7 +101,7 @@ open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType, ImageR
   }
 
   // copy over the existing logic from the SelectorRow
-  func displayImagePickerController(_ sourceType: UIImagePickerControllerSourceType) {
+    func displayImagePickerController(_ sourceType: UIImagePickerController.SourceType) {
     if let presentationMode = presentationMode, !isDisabled {
       if let controller = presentationMode.makeController(){
         controller.row = self
@@ -182,7 +182,7 @@ open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType, ImageR
         }
 
         if sourceActionSheet.actions.count == 1 {
-            if let imagePickerSourceType = UIImagePickerControllerSourceType(rawValue: sourceTypes.imagePickerControllerSourceTypeRawValue) {
+            if let imagePickerSourceType = UIImagePickerController.SourceType(rawValue: sourceTypes.imagePickerControllerSourceTypeRawValue) {
                 displayImagePickerController(imagePickerSourceType)
             }
         } else {
@@ -212,7 +212,7 @@ open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType, ImageR
 
 public extension _ImageRow {
     func createOptionForAlertController(_ alertController: UIAlertController, sourceType: ImageRowSourceTypes) {
-        guard let pickerSourceType = UIImagePickerControllerSourceType(rawValue: sourceType.imagePickerControllerSourceTypeRawValue), sourceTypes.contains(sourceType) else { return }
+        guard let pickerSourceType = UIImagePickerController.SourceType(rawValue: sourceType.imagePickerControllerSourceTypeRawValue), sourceTypes.contains(sourceType) else { return }
 
         let option = UIAlertAction(title: NSLocalizedString(sourceType.localizedString, comment: ""), style: .default) { [weak self] _ in
             self?.displayImagePickerController(pickerSourceType)
