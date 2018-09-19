@@ -48,8 +48,6 @@ open class ImagePickerController: UIImagePickerController, TypedRowControllerTyp
         onDismissCallback?(self)
     }
     
-    
-    
     open func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
         onDismissCallback?(self)
     }
