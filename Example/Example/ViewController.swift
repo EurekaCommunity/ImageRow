@@ -16,7 +16,7 @@ class ViewController: FormViewController {
                 <<< ImageRow() { row in
                     row.title = "Image Row 1"
                     row.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum]
-                    row.clearAction = .yes(style: UIAlertActionStyle.destructive)
+                    row.clearAction = .yes(style: UIAlertAction.Style.destructive)
                 }
              +++
                  Section()
@@ -61,7 +61,7 @@ public final class MyImageCell: PushSelectorCell<UIImage> {
         super.init(coder: aDecoder)
     }
     
-    public required init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    public required init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         fatalError("init(style:reuseIdentifier:) has not been implemented")
     }
     
