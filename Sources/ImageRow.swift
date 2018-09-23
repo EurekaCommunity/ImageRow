@@ -94,6 +94,7 @@ open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType, ImageR
 
     presentationMode = .presentModally(controllerProvider: ControllerProvider.callback { return ImagePickerController() }, onDismiss: { [weak self] vc in
       self?.select()
+      self?.cell?.formViewController()?.tableView?.reloadData()
       vc.dismiss(animated: true)
     })
 
