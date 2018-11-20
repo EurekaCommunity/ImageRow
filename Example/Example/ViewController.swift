@@ -19,7 +19,7 @@ class ViewController: FormViewController {
                     row.clearAction = .yes(style: UIAlertAction.Style.destructive)
                 }
              +++
-                 Section()
+                Section()
                 <<< ImageRow() {
                     $0.title = "Image Row 2"
                     $0.sourceTypes = .PhotoLibrary

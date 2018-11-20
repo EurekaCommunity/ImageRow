@@ -14,6 +14,8 @@
 		28F828D51C4B714D00330CF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F828D31C4B714D00330CF4 /* Main.storyboard */; };
 		28F828D71C4B714D00330CF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F828D61C4B714D00330CF4 /* Assets.xcassets */; };
 		28F828DA1C4B714D00330CF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F828D81C4B714D00330CF4 /* LaunchScreen.storyboard */; };
+		8FE3CC2D2165096C00A85D97 /* ImageRow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9CAB221D89C756006E1824 /* ImageRow.framework */; };
+		8FE3CC2E2165096C00A85D97 /* ImageRow.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9CAB221D89C756006E1824 /* ImageRow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A61F6D11EB9211100CBE062 /* CustomRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A61F6D01EB9211100CBE062 /* CustomRow.xib */; };
 		9A61F6D51EB9227500CBE062 /* CustomPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A61F6D41EB9227500CBE062 /* CustomPickerController.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +35,13 @@
 			remoteGlobalIDString = 28F828871C494B2C00330CF4;
 			remoteInfo = ImageRowTests;
 		};
+		8FE3CC2F2165096C00A85D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 287D0A741C4B7B26004566D6 /* ImageRow.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 28F8287C1C494B2C00330CF4;
+			remoteInfo = ImageRow;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +52,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				28BDF6151DA43255000518EB /* Eureka.framework in Embed Frameworks */,
+				8FE3CC2E2165096C00A85D97 /* ImageRow.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28BDF6141DA43255000518EB /* Eureka.framework in Frameworks */,
+				8FE3CC2D2165096C00A85D97 /* ImageRow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +152,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8FE3CC302165096C00A85D97 /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -246,6 +258,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8FE3CC302165096C00A85D97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ImageRow;
+			targetProxy = 8FE3CC2F2165096C00A85D97 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		28F828D31C4B714D00330CF4 /* Main.storyboard */ = {
@@ -374,7 +394,9 @@
 		28F828EA1C4B714D00330CF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(SRCROOT)/../Carthage/Build/iOS";
@@ -387,7 +409,9 @@
 		28F828EB1C4B714D00330CF4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(SRCROOT)/../Carthage/Build/iOS";
