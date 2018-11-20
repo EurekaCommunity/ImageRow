@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ImageRow"
-  s.version          = "3.1.0"
+  s.version          = "3.2.0"
   s.summary          = "Eureka row that allows us to take or select a picture."
   s.homepage         = "https://github.com/EurekaCommunity/ImageRow"
   s.license          = { type: 'MIT', file: 'LICENSE' }
@@ -10,5 +10,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
   s.requires_arc = true
   s.ios.source_files = 'Sources/**/*.{swift}'
-  s.dependency 'Eureka', '~> 4.0'
+  s.dependency 'Eureka', '~> 4.3'
+  s.swift_version = "4.2"
 end

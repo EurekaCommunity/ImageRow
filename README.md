@@ -31,10 +31,10 @@ class ViewController: FormViewController {
                 <<< ImageRow() { row in
                     row.title = "Image Row 1"
                     row.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum]
-                    row.clearAction = .yes(style: UIAlertActionStyle.destructive)
+                    row.clearAction = .yes(style: UIAlertAction.Style.destructive)
                 }
              +++
-                 Section()
+                Section()
                 <<< ImageRow() {
                     $0.title = "Image Row 2"
                     $0.sourceTypes = .PhotoLibrary
@@ -117,10 +117,6 @@ To localize the Actionsheet strings just add the keys `"Take photo", "Photo Libr
 ## Author
 
 * [Xmartlabs SRL](https://github.com/xmartlabs) ([@xmartlabs](https://twitter.com/xmartlabs))
-
-## FAQ
-
-no content yet
 
 # Change Log
 
