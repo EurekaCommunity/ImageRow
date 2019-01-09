@@ -33,6 +33,10 @@ open class ImagePickerController: UIImagePickerController, TypedRowControllerTyp
     
     /// A closure to be called when the controller disappears.
     public var onDismissCallback: ((UIViewController) -> ())?
+
+    override open var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
     
     open override func viewDidLoad() {
         super.viewDidLoad()
