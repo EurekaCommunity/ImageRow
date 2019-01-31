@@ -25,6 +25,16 @@
 import Eureka
 import Foundation
 
+public protocol ImagePickerProtocol: class {
+    var allowEditor: Bool { get set }
+
+    var imageURL: URL? { get set }
+
+    var useEditedImage: Bool { get set }
+
+    var userPickerInfo: [UIImagePickerController.InfoKey:Any]? { get set }
+}
+
 /// Selector Controller used to pick an image
 open class ImagePickerController: UIImagePickerController, TypedRowControllerType, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -40,15 +50,15 @@ open class ImagePickerController: UIImagePickerController, TypedRowControllerTyp
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        allowsEditing = (row as? ImageRow)?.allowEditor ?? false
+        allowsEditing = (row as? ImagePickerProtocol)?.allowEditor ?? false
         delegate = self
     }
     
     open func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        (row as? ImageRow)?.imageURL = info[UIImagePickerController.InfoKey.referenceURL] as? URL
-        
-        row.value = info[ (row as? ImageRow)?.useEditedImage ?? false ? UIImagePickerController.InfoKey.editedImage : UIImagePickerController.InfoKey.originalImage] as? UIImage
-        (row as? ImageRow)?.userPickerInfo = info
+        (row as? ImagePickerProtocol)?.imageURL = info[UIImagePickerController.InfoKey.referenceURL] as? URL
+
+        row.value = info[ (row as? ImagePickerProtocol)?.useEditedImage ?? false ? UIImagePickerController.InfoKey.editedImage : UIImagePickerController.InfoKey.originalImage] as? UIImage
+        (row as? ImagePickerProtocol)?.userPickerInfo = info
         onDismissCallback?(self)
     }
     
