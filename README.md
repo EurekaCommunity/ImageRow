@@ -60,9 +60,9 @@ You must add the **NSPhotoLibraryUsageDescription**  and **NSCameraUsageDescript
 
 ## Requirements
 
-* iOS 9.0+
-* Xcode 9.0+
-* Eureka ~> 4.0
+* iOS 9.3+
+* Xcode 10.2+
+* Eureka ~> 5.0
 
 ## Getting involved
 
@@ -89,7 +89,7 @@ You can also experiment and learn with the *ImageRow Playground* which is contai
 To install ImageRow, simply add the following line to your Podfile:
 
 ```ruby
-pod 'ImageRow', '~> 3.0'
+pod 'ImageRow', '~> 4.0'
 ```
 
 #### Carthage
@@ -99,7 +99,7 @@ pod 'ImageRow', '~> 3.0'
 To install ImageRow, simply add the following line to your Cartfile:
 
 ```ogdl
-github "EurekaCommunity/ImageRow" ~> 3.0
+github "EurekaCommunity/ImageRow" ~> 4.0
 ```
 
 ## Customization

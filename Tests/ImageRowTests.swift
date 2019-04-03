@@ -68,9 +68,9 @@ class ImageRowTests: XCTestCase {
     }
     
     func testImagePickerControllerSourceTypeRawValue() {
-        XCTAssert(UIImagePickerControllerSourceType.photoLibrary.rawValue == ImageRowSourceTypes.PhotoLibrary.imagePickerControllerSourceTypeRawValue)
-        XCTAssert(UIImagePickerControllerSourceType.camera.rawValue == ImageRowSourceTypes.Camera.imagePickerControllerSourceTypeRawValue)
-        XCTAssert(UIImagePickerControllerSourceType.savedPhotosAlbum.rawValue == ImageRowSourceTypes.SavedPhotosAlbum.imagePickerControllerSourceTypeRawValue)
+        XCTAssert(UIImagePickerController.SourceType.photoLibrary.rawValue == ImageRowSourceTypes.PhotoLibrary.imagePickerControllerSourceTypeRawValue)
+        XCTAssert(UIImagePickerController.SourceType.camera.rawValue == ImageRowSourceTypes.Camera.imagePickerControllerSourceTypeRawValue)
+        XCTAssert(UIImagePickerController.SourceType.savedPhotosAlbum.rawValue == ImageRowSourceTypes.SavedPhotosAlbum.imagePickerControllerSourceTypeRawValue)
     }
     
     func testImageRow() {
