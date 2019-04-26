@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to ImageRow will be documented in this file.
 
+### [4.0.0](https://github.com/EurekaCommunity/ImageRow/releases/tag/4.0.0)
+<!-- Released on 2019-04-26. -->
+
+* Xcode 10.2 and Swift 5 compatibility
+* Eureka 5 support (#62)
+* Default the ImagePickerController's status bar to black (.default) (#57)
+* Fixed issues which inhibited subclassing. (#58)
+
 ### [3.2.0](https://github.com/EurekaCommunity/ImageRow/releases/tag/3.2.0)
 <!-- Released on 2018-11-20. -->
 
