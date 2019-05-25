@@ -173,7 +173,8 @@ open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType, ImageR
 
         createOptionsForAlertController(sourceActionSheet)
 
-        if case .yes(let style) = clearAction, value != nil {
+        // if thumbnail or value is set, offer clear action
+        if case .yes(let style) = clearAction, value != nil || thumbnailImage != nil {
             let clearPhotoOption = UIAlertAction(title: NSLocalizedString("Clear Photo", comment: ""), style: style) { [weak self] _ in
                 self?.value = nil
                 self?.thumbnailImage = nil
