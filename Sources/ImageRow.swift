@@ -60,6 +60,7 @@ public enum ImageClearAction {
 
 public protocol ImageRowProtocol {
     var placeholderImage: UIImage? { get }
+    var thumbnailImage: UIImage? { get }
 }
 
 //MARK: Row
@@ -77,6 +78,7 @@ open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType, ImageR
   open var imageURL: URL?
   open var clearAction = ImageClearAction.yes(style: .destructive)
   open var placeholderImage: UIImage?
+  open var thumbnailImage: UIImage?
     
   open var userPickerInfo : [UIImagePickerController.InfoKey:Any]?
   open var allowEditor : Bool
