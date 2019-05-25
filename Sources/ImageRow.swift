@@ -176,6 +176,7 @@ open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType, ImageR
         if case .yes(let style) = clearAction, value != nil {
             let clearPhotoOption = UIAlertAction(title: NSLocalizedString("Clear Photo", comment: ""), style: style) { [weak self] _ in
                 self?.value = nil
+                self?.thumbnailImage = nil
                 self?.imageURL = nil
                 self?.updateCell()
             }
