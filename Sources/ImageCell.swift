@@ -43,7 +43,7 @@ public final class ImageCell: PushSelectorCell<UIImage> {
         super.update()
         
         selectionStyle = row.isDisabled ? .none : .default
-        (accessoryView as? UIImageView)?.image = row.value ?? (row as? ImageRowProtocol)?.placeholderImage
-        (editingAccessoryView as? UIImageView)?.image = row.value ?? (row as? ImageRowProtocol)?.placeholderImage
+        (accessoryView as? UIImageView)?.image = row.value ?? (row as? ImageRowProtocol)?.thumbnailImage ?? (row as? ImageRowProtocol)?.placeholderImage
+        (editingAccessoryView as? UIImageView)?.image = row.value ?? (row as? ImageRowProtocol)?.thumbnailImage ?? (row as? ImageRowProtocol)?.placeholderImage
     }
 }
