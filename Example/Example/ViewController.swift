@@ -27,7 +27,7 @@ class ViewController: FormViewController {
                 }
                 .cellUpdate { cell, row in
                     cell.accessoryView?.layer.cornerRadius = 17
-                    cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+                    cell.accessoryView?.frame.size = CGSize(width: 34, height: 34)
                 }
              +++
                  Section()
