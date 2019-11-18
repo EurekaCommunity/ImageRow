@@ -50,7 +50,6 @@ open class ImagePickerController: UIImagePickerController, TypedRowControllerTyp
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        allowsEditing = (row as? ImagePickerProtocol)?.allowEditor ?? false
         delegate = self
     }
     
