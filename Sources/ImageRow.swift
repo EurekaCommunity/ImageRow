@@ -94,7 +94,13 @@ open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType, ImageR
     
     super.init(tag: tag)
 
-    presentationMode = .presentModally(controllerProvider: ControllerProvider.callback { return ImagePickerController() }, onDismiss: { [weak self] vc in
+    presentationMode = .presentModally(controllerProvider:
+        ControllerProvider.callback { [weak self] in
+            let controller = ImagePickerController()
+            controller.allowsEditing = self?.allowEditor ?? false
+            return controller
+        
+        }, onDismiss: { [weak self] vc in
       self?.select()
       vc.dismiss(animated: true)
     })
