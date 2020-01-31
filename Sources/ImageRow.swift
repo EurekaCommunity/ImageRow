@@ -79,6 +79,7 @@ open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType, ImageR
   open var clearAction = ImageClearAction.yes(style: .destructive)
   open var placeholderImage: UIImage?
   open var thumbnailImage: UIImage?
+  open var actionTintColor: UIColor
     
   open var userPickerInfo : [UIImagePickerController.InfoKey:Any]?
   open var allowEditor : Bool
@@ -91,6 +92,7 @@ open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType, ImageR
     userPickerInfo = nil
     allowEditor = false
     useEditedImage = false
+    actionTintColor = .systemBlue
     
     super.init(tag: tag)
 
@@ -169,6 +171,7 @@ open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType, ImageR
 
         // Now that we know the number of sources aren't empty, let the user select the source
         let sourceActionSheet = UIAlertController(title: nil, message: selectorTitle, preferredStyle: .actionSheet)
+        sourceActionSheet.view.tintColor = actionTintColor
 
         guard let tableView = cell.formViewController()?.tableView  else { fatalError() }
 
