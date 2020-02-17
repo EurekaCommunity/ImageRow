@@ -23,6 +23,7 @@
 // THE SOFTWARE.
 
 import Eureka
+import UIKit
 
 public final class ImageCell: PushSelectorCell<UIImage> {
     public override func setup() {
