@@ -24,6 +24,7 @@
 
 import Eureka
 import Foundation
+import UIKit
 
 public protocol ImagePickerProtocol: class {
     var allowEditor: Bool { get set }

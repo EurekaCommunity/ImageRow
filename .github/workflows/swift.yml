@@ -1,0 +1,15 @@
+name: ImageRow Swift Package
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Generate xcodeproj
+      run: swift package generate-xcodeproj
+    - name: Run tests
+      run: xcodebuild build test -destination 'name=iPhone 11' -scheme 'ImageRow-Package'

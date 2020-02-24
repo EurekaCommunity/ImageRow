@@ -24,6 +24,7 @@
 
 import Eureka
 import Foundation
+import UIKit
 
 public struct ImageRowSourceTypes: OptionSet {
     public let rawValue: Int
