@@ -56,8 +56,16 @@ open class ImagePickerController: UIImagePickerController, TypedRowControllerTyp
     
     open func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         (row as? ImagePickerProtocol)?.imageURL = info[UIImagePickerController.InfoKey.referenceURL] as? URL
+
+        row.value = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        
+        let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+
+        if(((row as? ImagePickerProtocol)?.useEditedImage ?? false) && editedImage != nil) {
+            row.value = editedImage
+        }
+        
         (row as? ImagePickerProtocol)?.userPickerInfo = info
-        row.value = info[ (row as? ImagePickerProtocol)?.useEditedImage ?? false ? UIImagePickerController.InfoKey.editedImage : UIImagePickerController.InfoKey.originalImage] as? UIImage
         
         onDismissCallback?(self)
     }
