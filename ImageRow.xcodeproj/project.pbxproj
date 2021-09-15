@@ -10,7 +10,6 @@
 		28BDF5F51DA40763000518EB /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BDF5F41DA40763000518EB /* ImagePickerController.swift */; };
 		28BDF5F91DA4078C000518EB /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BDF5F81DA4078C000518EB /* ImageRow.swift */; };
 		28BDF5FB1DA4079B000518EB /* ImageRowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BDF5FA1DA4079B000518EB /* ImageRowTests.swift */; };
-		28BDF5FE1DA42427000518EB /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BDF5FD1DA42427000518EB /* Eureka.framework */; };
 		28BDF5FF1DA42427000518EB /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BDF5FD1DA42427000518EB /* Eureka.framework */; };
 		28F828811C494B2C00330CF4 /* ImageRow.h in Headers */ = {isa = PBXBuildFile; fileRef = 28F828801C494B2C00330CF4 /* ImageRow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28F828881C494B2C00330CF4 /* ImageRow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F8287D1C494B2C00330CF4 /* ImageRow.framework */; };
@@ -54,7 +53,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28BDF5FE1DA42427000518EB /* Eureka.framework in Frameworks */,
 				3D9B0D20D02EC1CD0489AFB6 /* Pods_ImageRow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
