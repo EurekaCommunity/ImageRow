@@ -8,7 +8,7 @@ let package = Package(
         .library(name: "ImageRow", targets: ["ImageRow"])
     ],
     dependencies: [
-        .package(url: "https://github.com/xmartlabs/Eureka.git", from: "5.2.0"),
+        .package(url: "https://github.com/xmartlabs/Eureka.git", from: "5.3.5"),
     ],
     targets: [
         .target(
