@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ImageRow"
-  s.version          = "4.0.0"
+  s.version          = "4.1.0"
   s.summary          = "Eureka row that allows us to take or select a picture."
   s.homepage         = "https://github.com/EurekaCommunity/ImageRow"
   s.license          = { type: 'MIT', file: 'LICENSE' }

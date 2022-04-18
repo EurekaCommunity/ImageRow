@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to ImageRow will be documented in this file.
 
+### [4.1.0](https://github.com/EurekaCommunity/ImageRow/releases/tag/4.1.0)
+<!-- Released on 2022-03-28. -->
+
+* Allows setting a thumbnail image (#69)
+* Added possibility to change the default action sheet tint color
+* Add support for Swift Package Manager + Add Github Actions support to…
+* Update to Eureka version 5.3.5 (#87)
+* Several fixes (#84, #73, #70)
+
 ### [4.0.0](https://github.com/EurekaCommunity/ImageRow/releases/tag/4.0.0)
 <!-- Released on 2019-04-26. -->
 
